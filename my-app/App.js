@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { AppBottomBar } from '../'
+import { AppBottomBar } from './src/navigation'
 
 export default function App() {
   return (
