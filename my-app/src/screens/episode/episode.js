@@ -2,7 +2,7 @@ import React from 'react';
 import { View,Text, TouchableOpacity} from 'react-native';
 import Style from '../../utility/appStyle.js';
 
-const CharScreen = props => {
+const EpisodeScreen = props => {
 
     return(
         <View style={Style.container}>
@@ -13,7 +13,7 @@ const CharScreen = props => {
 }
 export const screenOptions = navData => {
     return {
-        headerTitle: 'Character'
+        headerTitle: 'Epi'
     }
 }
-export default CharScreen;
+export default EpisodeScreen;

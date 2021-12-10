@@ -4,8 +4,10 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import DashboardScreen, {screenOptions as DashboardScreenoptions} from '../screens/dashboard';
-import CharacterScreen, {screenOptions as CharacterScreenoptions} from '../screens/character';
-import EpisodeScreen, {screenOptions as EpisodeScreenoptions} from '../screens/episode';
+import CharactersScreen, {screenOptions as CharacterScreenoptions} from '../screens/character';
+import CharacterScreen, {screenOptions as CharScreenoptions} from '../screens/character'
+import EpisodesScreen, {screenOptions as EpisodeScreenoptions} from '../screens/episode';
+import EpisodeScreen,{screenOptions as EpiScreenoptions}from '../screens/episode/episode';
 import QuotesScreen, {screenOptions as QuotesScreenoptions} from '../screens/quotes';
 
 const DashboardStackNavigator = createStackNavigator();
@@ -22,16 +24,18 @@ const CharacterStackNavigator = createStackNavigator();
 export const CharacterStack = () => {
     return(
         <CharacterStackNavigator.Navigator>
-            <CharacterStackNavigator.Screen name='Character' component={CharacterScreen} option={CharacterScreenoptions}/>
+            <CharacterStackNavigator.Screen name='Characters' component={CharactersScreen} option={CharacterScreenoptions}/>
+            <CharacterStackNavigator.Screen name='Character' component={CharacterScreen} option={CharScreenoptions}/>
         </CharacterStackNavigator.Navigator>
-    )
-    
+    )   
 }
+
 const EpisodeStackNavigator = createStackNavigator();
 export const EpisodeStack = () => {
     return(
         <EpisodeStackNavigator.Navigator>
-            <EpisodeStackNavigator.Screen name='Episode' component={EpisodeScreen} option={EpisodeScreenoptions}/>
+            <EpisodeStackNavigator.Screen name='Episodes' component={EpisodesScreen} option={EpisodeScreenoptions}/>
+            <EpisodeStackNavigator.Screen name='Episode' component={EpisodeScreen} option={EpiScreenoptions}/>
         </EpisodeStackNavigator.Navigator>
     )
     

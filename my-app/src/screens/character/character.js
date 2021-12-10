@@ -1,37 +1,22 @@
-import React,{useState,useEffect} from 'react';
+import React from 'react';
 import { View,Text, TouchableOpacity} from 'react-native';
 import Style from '../../utility/appStyle.js';
 
-
-
-const CharScreen = props => {
-
-    const [data,setData] = useState([]);
-    const loadData = async() =>{
-        const url = 'https://www.breakingbadapi.com/api/characters';
-        const response = await fetch(url,{
-            method: 'GET'
-        })
-        const serverData = await response.json();
-        setData(serverData)
-    }
-    
-    useEffect(()=>{ 
-        loadData();
-    },[])
-
-    
-    
+const CharacterScreen = props => {
+    const character = props.route.params.characterAssets;
     return(
+        
         <View style={Style.container}>
-            <Text>Character</Text>
+            <Text>asdasd</Text>
         </View>
     )
 
 }
 export const screenOptions = navData => {
-    return {
-        headerTitle: 'Character'
-    }
+    return (
+        <View>
+            
+        </View>
+    )
 }
-export default CharScreen;
+export default CharacterScreen;
