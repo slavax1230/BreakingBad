@@ -26,7 +26,7 @@ const CharactersScreen = props => {
                 source={{uri:'https://hyperpix.net/wp-content/uploads/2020/04/breaking-bad-logo-font-free-download.jpg'}}
                 />
             </View>
-        <View style={{height:'10%'}}><Text style={{fontSize:35}}>Characters</Text></View>
+            <View style={{height:'10%'}}><Text style={{fontSize:35}}>Characters</Text></View>
             <View name='characterView' style={{flex:1,width:'100%',height:120,justifyContent:'center', alignItems:'center'}}>
             <FlatList
             data={data}

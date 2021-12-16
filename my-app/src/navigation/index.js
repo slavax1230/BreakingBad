@@ -3,21 +3,11 @@ import { createStackNavigator} from '@react-navigation/stack';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import DashboardScreen, {screenOptions as DashboardScreenoptions} from '../screens/dashboard';
-import CharactersScreen, {screenOptions as CharacterScreenoptions} from '../screens/character';
-import CharacterScreen, {screenOptions as CharScreenoptions} from '../screens/character'
-import EpisodesScreen, {screenOptions as EpisodeScreenoptions} from '../screens/episode';
-import EpisodeScreen,{screenOptions as EpiScreenoptions}from '../screens/episode/episode';
+import CharactersScreen, {screenOptions as CharacterScreenoptions} from '../screens/character/index';
+import CharacterScreen, {screenOptions as CharScreenoptions} from '../screens/character/character'
+import EpisodesScreen, {screenOptions as EpisodeScreenoptions} from '../screens/episode/index.js';
+import SeasonScreen,{screenOptions as SeasonScreenoption}from '../screens/episode/episode.js';
 import QuotesScreen, {screenOptions as QuotesScreenoptions} from '../screens/quotes';
-
-const DashboardStackNavigator = createStackNavigator();
-export const DashboardStack = () => {
-    return(
-        <DashboardStackNavigator.Navigator>
-            <DashboardStackNavigator.Screen name='Dashboard' component={DashboardScreen} option={DashboardScreenoptions}/>
-        </DashboardStackNavigator.Navigator>
-    )
-}
 
 const CharacterStackNavigator = createStackNavigator();
 
@@ -35,7 +25,7 @@ export const EpisodeStack = () => {
     return(
         <EpisodeStackNavigator.Navigator>
             <EpisodeStackNavigator.Screen name='Episodes' component={EpisodesScreen} option={EpisodeScreenoptions}/>
-            <EpisodeStackNavigator.Screen name='Episode' component={EpisodeScreen} option={EpiScreenoptions}/>
+            <EpisodeStackNavigator.Screen name='Season' component={SeasonScreen} option={SeasonScreenoption}/>
         </EpisodeStackNavigator.Navigator>
     )
     
@@ -54,17 +44,13 @@ const AppBottomBarNavigator = createMaterialBottomTabNavigator();
 export const AppBottomBar = () => {
     return(
         <AppBottomBarNavigator.Navigator>
-            <AppBottomBarNavigator.Screen
-             options={{ tabBarLabel: '', tabBarIcon:({}) => (<MaterialCommunityIcons name='bookmark' color="#20a864" size={26}/>)}}
-             name="Dashboard" 
-             component={DashboardStack}/>
             <AppBottomBarNavigator.Screen 
             options={{ tabBarLabel: '', tabBarIcon:({}) => (<MaterialCommunityIcons name='bookmark' color="#20a864" size={26}/>)}}
             name="Character"
              component={CharacterStack}/>
             <AppBottomBarNavigator.Screen 
             options={{ tabBarLabel: '', tabBarIcon:({}) => (<MaterialCommunityIcons name='bookmark' color="#20a864" size={26}/>)}}
-            name="Episode" component={EpisodeStack}/>
+            name="Episodes" component={EpisodeStack}/>
             <AppBottomBarNavigator.Screen 
              options={{ tabBarLabel: '', tabBarIcon:({}) => (<MaterialCommunityIcons name='bookmark' color="#20a864" size={26}/>)}}
             name="Quotes" component={QuotesStack}/>

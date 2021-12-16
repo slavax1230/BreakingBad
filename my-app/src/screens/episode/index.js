@@ -21,14 +21,18 @@ const EpisodesScreen = props => {
     
     return(
         <View style={Style.container}>
-           
+            <View>
+           <TouchableOpacity onPress={props.navigation.navigate('Season')}>
+                <Text style={{fontSize:35}}>ClickMe</Text>
+           </TouchableOpacity>
+           </View>
         </View>
     )
 
 }
 export const screenOptions = navData => {
     return {
-        headerTitle: 'Episode'
+        headerTitle: 'Episodes'
     }
 }
 export default EpisodesScreen;
